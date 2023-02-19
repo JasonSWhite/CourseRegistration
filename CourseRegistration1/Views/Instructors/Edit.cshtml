@@ -1,0 +1,51 @@
+﻿@model CourseRegistration1.Models.Instructor
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h4>Edit Instructor</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="I_id" class="control-label"></label>
+                <input asp-for="I_id" class="form-control" />
+                <span asp-validation-for="I_id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="I_fName" class="control-label"></label>
+                <input asp-for="I_fName" class="form-control" />
+                <span asp-validation-for="I_fName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="I_lName" class="control-label"></label>
+                <input asp-for="I_lName" class="form-control" />
+                <span asp-validation-for="I_lName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="I_email" class="control-label"></label>
+                <input asp-for="I_email" class="form-control" />
+                <span asp-validation-for="I_email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="C_name" class="control-label"></label>
+                <input asp-for="C_name" class="form-control" />
+                <span asp-validation-for="C_name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
